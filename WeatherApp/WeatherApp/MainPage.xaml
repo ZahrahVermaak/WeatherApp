@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherApp.MainPage"
+             BackgroundImage="background.png">
+
+    <StackLayout>
+
+
+        
+        <Label Text="CoLab Building" FontSize="Large" TextColor="White" HorizontalOptions="Center" />
+        <Label Text="{Binding temp, StringFormat='{0:F0}&#176;C'}" HorizontalOptions="Center" FontSize="30" TextColor="White"/>
+        <Label Text="Minimum Temperature:" FontSize="25" TextColor="White"/>
+        <Label Text="{Binding temp_min,StringFormat='{0:F0}&#176;C'}" TextColor="White"/>
+        <Label Text="Maximum Temperature:" FontSize="25" TextColor="White"/>
+        <Label Text="{Binding temp_max, StringFormat='{0:F0}&#176;C'}" TextColor="White"/>
+        <Label Text="Pressure:" FontSize="25" TextColor="White"/>
+        <Label Text="{Binding pressure}" TextColor="White"/>
+        <Label Text="Humidity:" FontSize="25" TextColor="White"/>
+        <Label Text="{Binding humidity}" TextColor="White"/>
+        <Label Text="Cloud Cover:" FontSize="25" TextColor="White"/>
+        <Label Text="{Binding all }" TextColor="White"/>
+        <Label Text="Wind Speed:" FontSize="25" TextColor="White"/>
+        <Label Text="{Binding speed }" TextColor="White"/>
+        
+        
+    </StackLayout>
+    
+
+    
+    
+
+</ContentPage>
+    
+    
