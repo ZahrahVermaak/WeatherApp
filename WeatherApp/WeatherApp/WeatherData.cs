@@ -8,7 +8,7 @@ namespace WeatherApp
     // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
     public class Clouds
     {
-       // public int all { get; set; }
+       public int all { get; set; }
     }
 
     public class Coord
@@ -25,7 +25,7 @@ namespace WeatherApp
         public double temp_max { get; set; }
         public int pressure { get; set; }
         public int humidity { get; set; }
-        public int all { get; set; }
+      //  public int all { get; set; }
         public double speed { get; set; }
         public int sea_level { get; set; }
     }
@@ -66,7 +66,7 @@ namespace WeatherApp
 
     public class Wind
     {
-       // public double speed { get; set; }
+       public double speed { get; set; }
         public int deg { get; set; }
         public double gust { get; set; }
     }

@@ -2,28 +2,125 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherApp.MainPage"
-             BackgroundImage="background.png">
+             BackgroundImage="background4.png">
 
     <StackLayout>
 
 
         
-        <Label Text="CoLab Building" FontSize="Large" TextColor="White" HorizontalOptions="Center" />
-        <Label Text="{Binding temp, StringFormat='{0:F0}&#176;C'}" HorizontalOptions="Center" FontSize="30" TextColor="White"/>
-        <Label Text="Minimum Temperature:" FontSize="25" TextColor="White"/>
-        <Label Text="{Binding temp_min,StringFormat='{0:F0}&#176;C'}" TextColor="White"/>
-        <Label Text="Maximum Temperature:" FontSize="25" TextColor="White"/>
-        <Label Text="{Binding temp_max, StringFormat='{0:F0}&#176;C'}" TextColor="White"/>
-        <Label Text="Pressure:" FontSize="25" TextColor="White"/>
-        <Label Text="{Binding pressure}" TextColor="White"/>
+            <Label Text="CoLab Building" FontSize="50" TextColor="White" HorizontalOptions="Center" />
+        <Label Text="{Binding CurrentWeather.main.temp, StringFormat='{0:F0}&#176;C'}"  FontSize="35" TextColor="White" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+
+
+
+
+
+
+
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Min Temp" VerticalOptions="CenterAndExpand" FontSize="20" TextColor="White"  Padding="15"/>
+            <Label Text="{Binding CurrentWeather.main.temp_min, StringFormat='{0:F0}&#176;C'}"  FontSize="35" TextColor="White" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+
+           <!-- <Image Source="humifityicon.png" Aspect="AspectFit" HeightRequest="20" WidthRequest="20" Grid.Column="2"/>-->
+
+        </Grid>
+
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+                <Label Text="Max Temp" VerticalOptions="CenterAndExpand" FontSize="20" TextColor="White" Padding="15"/>
+                <Label Text="{Binding CurrentWeather.main.temp_max, StringFormat='{0:F0}&#176;C'}"  FontSize="35" TextColor="White" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+
+
+        </Grid>
+
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+                <Label Text="Pressure" VerticalOptions="CenterAndExpand" FontSize="20" TextColor="White"  Padding="15"/>
+            
+            <Label Text="Pressure" VerticalOptions="CenterAndExpand" FontSize="20" TextColor="White"  Padding="15"/>
+            <Label Text="{Binding CurrentWeather.main.pressure}"   FontSize="35" TextColor="White" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+            
+               <!-- <Image Source="pressureicon.png" Aspect="AspectFit" HeightRequest="5" WidthRequest="5" Grid.Column="2" />-->
+            
+             
+        </Grid>
+
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Humidity" VerticalOptions="CenterAndExpand" FontSize="20" TextColor="White"  Padding="15"/>
+            <Label Text="{Binding CurrentWeather.main.humidity}"  FontSize="35" TextColor="White" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+           <!-- <Image Source="humidityicon.png" Aspect="AspectFit" HeightRequest="5" WidthRequest="5" Grid.Column="2" />-->
+        </Grid>
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Cloud Cover" VerticalOptions="CenterAndExpand" FontSize="20" TextColor="White" Padding="15"/>
+            <Label Text="{Binding CurrentWeather.clouds.all}"  VerticalOptions="Center" FontSize="35" TextColor="White" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+            
+                
+
+        </Grid>
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Wind Speed" VerticalOptions="CenterAndExpand" FontSize="20" TextColor="White" Padding="15"/>
+            <Label Text="{Binding CurrentWeather.wind.speed}" VerticalOptions="Center" FontSize="35" TextColor="White" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+
+
+        </Grid>
+
+
+        <!--<Label Text="Minimum Temperature:" FontSize="25" TextColor="White"/>
+        <Label Text="{Binding CurrentWeather.main.temp_min,StringFormat='{0:F0}&#176;C'}" TextColor="White" FontSize="20"/>-->
+       <!-- <Label Text="Maximum Temperature:" FontSize="25" TextColor="White"/>
+        <Label Text="{Binding CurrentWeather.main.temp_max, StringFormat='{0:F0}&#176;C'}" TextColor="White" FontSize="20"/>-->
+       <!-- <Label Text="Pressure:" FontSize="25" TextColor="White"/>-
+        <Label Text="{Binding CurrentWeather.main.pressure}" TextColor="White" FontSize="20"/>
         <Label Text="Humidity:" FontSize="25" TextColor="White"/>
-        <Label Text="{Binding humidity}" TextColor="White"/>
-        <Label Text="Cloud Cover:" FontSize="25" TextColor="White"/>
-        <Label Text="{Binding all }" TextColor="White"/>
+        <Label Text="{Binding CurrentWeather.main.humidity}" TextColor="White" FontSize="20"/>
+        <Label Text="Cloud Cover:" FontSize="25" TextColor="White"/>-->
+       <!-- <Label Text="{Binding CurrentWeather.clouds.all }" TextColor="White" FontSize="20"/>
         <Label Text="Wind Speed:" FontSize="25" TextColor="White"/>
-        <Label Text="{Binding speed }" TextColor="White"/>
-        
-        
+        <Label Text="{Binding CurrentWeather.wind.speed }" TextColor="White" FontSize="20"/>-->
+
+        <ActivityIndicator IsRunning="{Binding IsLoading}"  IsVisible="{Binding IsLoading}"                       
+                           VerticalOptions="StartAndExpand"/>
+
     </StackLayout>
     
 

@@ -12,20 +12,54 @@ using Xamarin.Forms;
 namespace WeatherApp
 {
     public partial class MainPage : ContentPage
-    {  
+    {
+        private OpenWeatherData _currentWeather;
+
+        public OpenWeatherData CurrentWeather
+        {
+            get
+            {
+                return _currentWeather;
+            }
+            set
+            {
+                _currentWeather = value;
+
+                OnPropertyChanged();
+            }
+        }
+
+
+        private bool _isLoading;
+
+        public bool IsLoading
+        {
+            get { return _isLoading; }
+            set { _isLoading = value;
+
+                OnPropertyChanged();
+            }
+        }
+
+
         public MainPage()
         {
             InitializeComponent();
 
-            BindingContext = new Main();
+            BindingContext = this;
         }
 
 
          protected async override void OnAppearing()
          {
             base.OnAppearing();
-            var response = await GetWeatherData();
-            BindingContext = response.main;
+
+
+
+            IsLoading = true;
+            CurrentWeather = await GetWeatherData();
+            IsLoading = false;
+        //    BindingContext = this;
          }
         private async Task<OpenWeatherData> GetWeatherData()
         {
