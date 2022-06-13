@@ -28,7 +28,7 @@
             <Label Text="Min Temp" VerticalOptions="CenterAndExpand" FontSize="20" TextColor="White"  Padding="15"/>
             <Label Text="{Binding CurrentWeather.main.temp_min, StringFormat='{0:F0}&#176;C'}"  FontSize="35" TextColor="White" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
 
-           <!-- <Image Source="humifityicon.png" Aspect="AspectFit" HeightRequest="20" WidthRequest="20" Grid.Column="2"/>-->
+           <!--<Image Source="humifityicon.png" Aspect="AspectFit" HeightRequest="20" WidthRequest="20" Grid.Column="2"/>-->
 
         </Grid>
 
@@ -56,10 +56,12 @@
             
                 <Label Text="Pressure" VerticalOptions="CenterAndExpand" FontSize="20" TextColor="White"  Padding="15"/>
             
-            <Label Text="Pressure" VerticalOptions="CenterAndExpand" FontSize="20" TextColor="White"  Padding="15"/>
+                <Label Text="Pressure" VerticalOptions="CenterAndExpand" FontSize="20" TextColor="White"  Padding="15"/>
+            
+           
             <Label Text="{Binding CurrentWeather.main.pressure}"   FontSize="35" TextColor="White" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
             
-               <!-- <Image Source="pressureicon.png" Aspect="AspectFit" HeightRequest="5" WidthRequest="5" Grid.Column="2" />-->
+              <!-- <Image Source="pressureicon.png" Aspect="AspectFit" HeightRequest="5" WidthRequest="5" Grid.Column="2" />-->
             
              
         </Grid>
